@@ -309,19 +309,3 @@
 
 # numSeconds = time.time()
 # print(numSeconds)
-from turtle import *
-from random import randint
-setup(1000, 800)
-bgcolor('black')
-speed(10)
-# # Vẽ sao
-def star(x, y, size):
-    penup()
-    goto(x, y)
-    dot(size, "white")
-
-for i in range(200):
-    star(randint(-480, 480), randint(0, 350), randint(2, 5))
-
-hideturtle()
-exitonclick()
