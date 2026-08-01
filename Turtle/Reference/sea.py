@@ -144,8 +144,9 @@ def ve_ca(x, y, kich_thuoc=15):
  
     # ---- Đuôi cá (tam giác đều nhỏ, gắn phía sau thân) ----
     # Cách vẽ tam giác đều quen thuộc: đi tới rồi rẽ trái 120 độ, lặp lại 3 lần
+    # nhac_but_toi(x - kich_thuoc, y_giua)
     nhac_but_toi(x - kich_thuoc, y_giua)
-    rua.setheading(200)         # xoay bút chếch ra phía sau thân cá
+    rua.setheading(150)         # xoay bút chếch ra phía sau thân cá
     rua.fillcolor(mau_ca)
     rua.begin_fill()
     for canh in range(3):
