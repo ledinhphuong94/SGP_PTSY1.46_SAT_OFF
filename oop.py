@@ -80,5 +80,6 @@ t2 = Turtle()
 startRace(t1, -400, 100, 'red')
 startRace(t2, -400, -100, 'blue')
 
+print(t1.xcor())
 
 exitonclick()
