@@ -52,7 +52,7 @@
 # Turtle Race
 
 from turtle import *
-
+from random import randint
 speed(0)
 pensize(5)
 penup()
@@ -73,13 +73,56 @@ def startRace(t, x, y, color):
     t.penup()
     t.goto(x, y)
 
+def celebrate(t):
+    t.goto(0, 0)
+    t.pendown()
+    for i in range(200):
+        t.forward(i * 2 + 5)
+        t.left(90)
+
 t1 = Turtle()
 t2 = Turtle()
+t3 = Turtle()
 
 # start of the race
 startRace(t1, -400, 100, 'red')
-startRace(t2, -400, -100, 'blue')
+startRace(t2, -400, 0, 'blue')
+startRace(t3, -400, -100, 'yellow')
 
-print(t1.xcor())
+def anGian(t):
+    print('click!')
+    t.forward(-5)
+t1.onclick(lambda x, y: anGian(t1))
+t2.onclick(lambda x, y: anGian(t2))
+t3.onclick(lambda x, y: anGian(t3))
+while t1.xcor() < 400 and t2.xcor() < 400 and t3.xcor() < 400:
+    ranNum = randint(0, 2)
+    if ranNum == 0:
+        t1.forward(randint(-2, 7))
+        t2.forward(randint(-2, 7))
+        t3.forward(randint(-2, 7))
+    elif ranNum == 1:
+        t2.forward(randint(-2, 7))
+        t1.forward(randint(-2, 7))
+        t3.forward(randint(-2, 7))
+    else:
+        t3.forward(randint(-2, 7))
+        t2.forward(randint(-2, 7))
+        t1.forward(randint(-2, 7))
+winNum = max(t1.xcor(), t2.xcor(), t3.xcor())
+# check who win
+if t1.xcor()== winNum:
+    # t1 win
+    celebrate(t1)
+    t1.write("I win hehe!", font=('Arial', 16, 'bold'))
+elif t2.xcor() == winNum:
+    # t2 win
+    celebrate(t2)
+    t2.write("I win hehe!", font=('Arial', 16, 'bold'))
+elif t3.xcor() == winNum:
+    # draw
+    celebrate(t3)
+    t3.write("I win hehe!", font=('Arial', 16, 'bold'))
+
 
 exitonclick()
