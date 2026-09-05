@@ -91,7 +91,8 @@ startRace(t3, -400, -100, 'yellow')
 
 def anGian(t):
     print('click!')
-    t.forward(-5)
+    t.forward(randint(-20, -1))
+
 t1.onclick(lambda x, y: anGian(t1))
 t2.onclick(lambda x, y: anGian(t2))
 t3.onclick(lambda x, y: anGian(t3))
