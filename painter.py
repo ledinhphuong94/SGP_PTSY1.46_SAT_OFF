@@ -20,12 +20,12 @@ def setGreen():
 
 def setBlue():
     t.color('blue')
-    
+
 scr = t.getscreen()
 # mouse event
 scr.onscreenclick(move)
 t.ondrag(draw)
-
+    
 # keyboard event
 # tell scr object listen to keyboard events
 scr.listen()
