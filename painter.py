@@ -21,6 +21,14 @@ def setGreen():
 def setBlue():
     t.color('blue')
 
+def increaseSize():
+    currWidth = t.width()
+    t.width(currWidth + 10)
+def decreaseSize():
+    currWidth = t.width()
+    if currWidth > 10:
+        t.width(currWidth - 10)
+        
 scr = t.getscreen()
 # mouse event
 scr.onscreenclick(move)
@@ -31,5 +39,10 @@ t.ondrag(draw)
 scr.listen()
 scr.onkey(setGreen, 'g')
 scr.onkey(setBlue, 'b')
+scr.onkey(increaseSize, 'q')
+scr.onkey(decreaseSize, 'w')
+
+def whoClickMe(x, y):
+    print(x, y)
 
 mainloop()
